@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise1</title>
+</head>
+<body>
+    <script>
+        const validatePass = ()=> {
+            var pass1 = document.querySelector("#pass1").value;
+            var pass2 = document.querySelector("#pass2").value;
+            if(pass1.length < 8 || pass2.length < 8) {
+                document.querySelector("#alerts").innerText = "Password must be of minimum length 8";
+            } else {
+                if(pass1 === pass2) {
+                    document.querySelector("#alerts").style = "color: green;";
+                    document.querySelector("#alerts").innerText = "Passwords Match.";
+                } else {
+                    document.querySelector("#alerts").style = "color: red;";
+                    document.querySelector("#alerts").innerText = "Passwords do not match";
+                }
+            }
+        }
+    </script>
+
+    <div>
+        <label for="pass1">Password:</label>
+        <input type="password" id="pass1" name="password" required>
+        <label for="pass2">Reenter password:</label>
+        <input type="password" id="pass2" name="password" required>
+    </div>
+
+    <button onclick="validatePass()">Validate</button>
+
+    <p style="color: red;" id="alerts"></p>
+    
+</body>
+</html>

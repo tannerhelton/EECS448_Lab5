@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exercise4</title>
+</head>
+<body>
+
+    <script>
+        const change = () => {
+            var txt = document.querySelector("#txt");
+            const border = {
+                r: parseInt(document.querySelector("#borderR").value),
+                g: parseInt(document.querySelector("#borderG").value),
+                b: parseInt(document.querySelector("#borderB").value),
+                w: parseInt(document.querySelector("#borderW").value)
+            };
+            const bg = {
+                r: parseInt(document.querySelector("#bgR").value),
+                g: parseInt(document.querySelector("#bgG").value),
+                b: parseInt(document.querySelector("#bgB").value)
+            };
+            if(border.r >= 0 && border.r <= 255 && border.g >= 0 && border.g <= 255 && border.b >= 0 && border.b <= 255 && border.w >= 0 && bg.r >= 0 && bg.r <= 255 && bg.g >= 0 && bg.g <= 255 && bg.b >= 0 && bg.b <= 255) {
+                txt.style.border = `rgb(${border.r}, ${border.g}, ${border.b}) solid ${border.w}px`;
+                txt.style.backgroundColor = `rgb(${bg.r}, ${bg.g}, ${bg.b})`;
+            } else {
+                alert("Please enter valid values.");
+            }
+        }
+    </script>
+
+    <div id="txt">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+    <div>
+        <h3>Border:</h3>
+        <p>R (0-255)</p>
+        <input id="borderR" type="number" min="0" max="255">
+        <p>G (0-255)</p>
+        <input id="borderG" type="number" min="0" max="255">
+        <p>B (0-255)</p>
+        <input id="borderB" type="number" min="0" max="255">
+        <p>Width</p>
+        <input id="borderW" type="number" min="0">
+    </div>
+    <div>
+        <h3>Background Color:</h3>
+        <p>R (0-255)</p>
+        <input id="bgR" type="text" type="number" min="0" max="255">
+        <p>G (0-255)</p>
+        <input id="bgG" type="text" type="number" min="0" max="255">
+        <p>B (0-255)</p>
+        <input id="bgB" type="text" type="number" min="0" max="255">
+    </div>
+    <button onclick="change()">Change CSS</button>
+    
+</body>
+</html>

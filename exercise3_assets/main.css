@@ -1,0 +1,33 @@
+body {
+    background-color: gray;
+}
+
+.container {
+    margin: 5px;
+    padding: 5px;
+    color: white;
+    font-family: arial;
+    font-size: 15pt; 
+}
+
+img {
+    width: 15%;
+}
+
+ul {
+    background-size: 100%; 
+    background:linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("./bg.jpeg");
+    background-size: contain; 
+}
+
+a 
+{ 
+    background-color: blue; 
+    color: red; 
+} 
+ 
+a:hover 
+{ 
+    background-color: red; 
+    color: blue 
+} 
